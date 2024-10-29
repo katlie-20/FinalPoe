@@ -5,7 +5,7 @@
 package com.mycompany.st10439663poepart1;
 
 import java.util.Scanner;
-
+import javax.swing.*;
 /**
  *
  * @author RC_Student_lab
@@ -13,7 +13,10 @@ import java.util.Scanner;
 public class ST10439663POEPart1 {
 
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
+        final JDialog dialog = new JDialog();
+        dialog.setAlwaysOnTop(true);
+       String welcome;
+        Scanner input = new Scanner(System.in);
         System.out.println("\tRegistration: ");
 
         // Get user's name and surname
@@ -73,7 +76,29 @@ public class ST10439663POEPart1 {
 
         // Welcome message after successful login
         System.out.println("Welcome " + name + " " + surname + ", it is great to see you again!");
+       
+    String welcomeMessage ="Welcome to Easy KanBan.";
+    JOptionPane.showMessageDialog(null,welcomeMessage);
+    
+    boolean exit = false;
+    
+    while(!exit){
+        //Show the menu to select options
+        String menu = "please choose an option:\n" + "1.Add task\n"+ "2.Show report\n" + "3.Quit";
+        String choice = JOptionPane.showInputDialog(menu);
+        
+        switch(choice){
+            case "1":
+            break;
+            
+            case "2":
+                JOptionPane.showMessageDialog(null,"Coming soon");
+                
+            case "3":
+                exit = true;
+            }
+        }
     }
 }
-    
+  
 
