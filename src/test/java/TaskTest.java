@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
  * @author RC_Student_lab
  */
 public class TaskTest {
-  
+    
     public Task task1;
     public Task task2;
     
@@ -22,10 +22,10 @@ public class TaskTest {
     
     
     public void setUp() {
-        // Task 1 - Using the provided test data
+        // Test data for task 1
         task1 = new Task("Login Feature", "Create Login to verify users", "Robyn Harrison", 8, "Auto generated", "To Do");
 
-        // Task 2 - Using the provided test data
+        // Test data for task 2
         task2 = new Task("Add Task Feature", "Create Add Task feature to add task users", "Mike Smith", 10, "Auto generated", "Doing");
     }
       @Test
@@ -51,4 +51,13 @@ public class TaskTest {
     public void testChecktaskDescription(){
         
     }
+     public void testCreateTaskID() {
+        
+     }
+     public void testPrintTaskDetails() {
+         
+     }
+     public void testReturnTaskDuration() {
+         
+     }
 }

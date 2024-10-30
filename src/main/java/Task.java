@@ -39,43 +39,50 @@ public class Task {
         return taskInitials + ":" + taskNumber + ":" + developerEnd;
     }
 
-    // printing of the task details
+    // Method to return full task details
     public String printTaskDetails() {
-        return "Task Name: " + taskName + "\n" +
-               "Task Number: " + taskNumber + "\n" +
-               "Task Description: " + taskDescription + "\n" +
+        return "Task Status: " + taskStatus + "\n" +
                "Developer Details: " + developerDetails + "\n" +
-               "Task Duration: " + taskDuration + "\n" +
-               "Task Status: " + taskStatus + "\n" +
-               "Task ID: " + taskID + "hrs\n";
+               "Task Number: " + taskNumber + "\n" +
+               "Task Name: " + taskName + "\n" +
+               "Task Description: " + taskDescription + "\n" +
+               "Task ID: " + taskID + "\n" +
+               "Task Duration: " + taskDuration + " hours";
     }
 
-    // Return task duration
-    public int returnTaskDuration() {
+    // Method to return task duration
+    public int getTaskDuration() {
         return taskDuration;
     }
-
-    Object getTaskStatus() {
-        return taskStatus;
+    
+    // method to calculate total hours across multiple tasks
+    public int returnTotalHours(Task[] tasks) {
+        int totalHours = 0;
+        for (Task task : tasks) {
+            totalHours += task.getTaskDuration();
+        }
+        return totalHours;
     }
 
-    Object getTaskID() {
-        return taskID;
-    }
-
-    short getTaskDuration() {
-        short TaskDuration = 0;
-        return TaskDuration;
-    }
-
-    Object getDeveloperDetails() {
-        return developerDetails;
+    Object getTaskName() {
+        return taskName;
     }
 
     Object getTaskDescription() {
         return taskDescription;
     }
-    Object getTaskName() {
-        return taskName;
+
+    Object getDeveloperDetails() {
+        return developerDetails;
     }
-}
+    Object getTaskID() {
+        return taskID;
+    }
+
+    Object getTaskStatus() {
+        return taskStatus;
+    }
+    
+    }
+
+    

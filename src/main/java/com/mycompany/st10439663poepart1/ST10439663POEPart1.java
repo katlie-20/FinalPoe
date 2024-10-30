@@ -126,7 +126,7 @@ public class ST10439663POEPart1 {
             String taskDurationStr = JOptionPane.showInputDialog("Enter Task Duration in hours:");
             int taskDuration = Integer.parseInt(taskDurationStr);
 
-            // Task ID generation
+            // Task ID creation
             String taskID = "TK" + i;
 
             // Task status dropdown
