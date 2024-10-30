@@ -89,6 +89,7 @@ public class ST10439663POEPart1 {
         
         switch(choice){
             case "1":
+                AddTasks();
             break;
             
             case "2":
@@ -96,9 +97,62 @@ public class ST10439663POEPart1 {
                 
             case "3":
                 exit = true;
+                break;
+            default:
+                
+            JOptionPane.showMessageDialog(null,"Please enter options 1 - 3");
+            break;
             }
         }
     }
-}
-  
+      // Method to add tasks
+    public static void AddTasks() {
+        String taskCountStr = JOptionPane.showInputDialog("How many tasks would you like to enter?");
+        int taskCount = Integer.parseInt(taskCountStr);
+
+        for (int i = 1; i <= taskCount; i++) {
+            // Collect task information
+            String taskName = JOptionPane.showInputDialog("Enter Task Name:");
+            String taskDescription = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
+
+            // Limit description to 50 characters
+            if (taskDescription.length() > 50) {
+                JOptionPane.showMessageDialog(null, "Task description cannot exceed 50 characters.");
+                taskDescription = taskDescription.substring(0, 50);
+            
+            }
+
+            String developerFirstNameAndLastName = JOptionPane.showInputDialog("Enter Developer First Name and Last Name:");
+            String taskDurationStr = JOptionPane.showInputDialog("Enter Task Duration in hours:");
+            int taskDuration = Integer.parseInt(taskDurationStr);
+
+            // Task ID generation
+            String taskID = "TK" + i;
+
+            // Task status dropdown
+            String[] taskStatusOptions = {"To Do", "Doing", "Done"};
+            String taskStatus = (String) JOptionPane.showInputDialog(null, "Select Task Status:",
+                    "Task Status", JOptionPane.QUESTION_MESSAGE, null, taskStatusOptions, taskStatusOptions[0]);
+        }
+    }
+        // printing of the task details
+    public String printTaskDetails() {
+        String taskName = null;
+        String taskNumber = null;
+        String taskDescription = null;
+        String developerDetails = null;
+        String taskDuration = null;
+        String taskStatus = null;
+        String taskID = null;
+        return "Task Name: " + taskName + "\n" +
+               "Task Number: " + taskNumber + "\n" +
+               "Task Description: " + taskDescription + "\n" +
+               "Developer Details: " + developerDetails + "\n" +
+               "Task Duration: " + taskDuration + "\n" +
+               "Task Status: " + taskStatus + "\n" +
+               "Task ID: " + taskID + "hrs\n"; 
+    }
+ }
+
+
 
