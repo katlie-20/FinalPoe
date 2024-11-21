@@ -166,7 +166,7 @@ public class ST10439663POEPart1 {
                     JOptionPane.showMessageDialog(null, "Invalid option, please choose the correct option.","Easy Kanban - Options",JOptionPane.ERROR_MESSAGE);
                     break;
             }
-        }
+        
          populateData();
         String menu = """
                 Choose an option:
@@ -200,6 +200,7 @@ public class ST10439663POEPart1 {
                 default -> JOptionPane.showMessageDialog(null, "Invalid Option!");
             }
         }
+    }
     }
 
     public static void populateData() {
